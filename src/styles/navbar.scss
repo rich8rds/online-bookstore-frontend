@@ -1,0 +1,38 @@
+@use '../index.scss' as app;
+
+.navbar {
+  height: 4em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #555;
+  box-shadow: 9px 4px 9px -6px rgba(70, 66, 66, 0.78);
+  background: #fafafb;
+  position: fixed;
+  width: 100%;
+  font-size: 14px;
+  z-index: 3;
+
+  .display {
+    width: 100%;
+    margin: 0 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #555;
+
+    .left {
+      color: #555;
+    }
+    .div, ul {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      .nav-link {
+        color: #555;
+        text-decoration: none;
+        list-style: none;
+      }
+    }
+  }
+}

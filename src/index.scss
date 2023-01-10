@@ -1,0 +1,208 @@
+
+$btnBgColor: #7b3aed;
+$btnBgHoverColor: #440aaa;
+$btnTextColor: #f9f2f9;
+
+$textColor: #5b6879;
+$headerColor: #1A202E;
+
+$inputTextColor: #3d424e;
+$iconColor: #7b39ed;
+$mainBg: #eae9f3;
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Source+Sans+Pro:ital,wght@0,400;0,600;1,200;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap');
+
+@mixin linear-gradient($direction, $color-stops...) {
+    // Direction has been omitted and happens to be a color-stop
+    @if is-direction($direction) == false {
+      $color-stops: $direction, $color-stops;
+      $direction: 180deg;
+    }
+    background: nth(nth($color-stops, 1), 1);
+    background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+    background: linear-gradient($direction, $color-stops);
+}
+
+@mixin boxshadow() {
+  box-shadow: 9px 4px 9px -6px rgba(189,174,174,0.78);
+  -webkit-box-shadow: 9px 4px 9px -6px rgba(189,174,174,0.78);
+  -moz-box-shadow: 9px 4px 9px -6px rgba(189,174,174,0.78);
+}
+
+@mixin displayflexcolumn($gap) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  flex-direction: column;
+}
+
+@mixin scrollbar() {
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgb(238, 238, 238);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $iconColorLight;
+    border-radius: 20px;
+  }
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Nunito, serif;
+}
+
+body { 
+  height: 100vh;
+  // background-color: $mainBg;
+  background: white;
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 
+      'Droid Sans', 'Helvetica Neue',sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  // background: rgba(201, 203, 203, 0.5);
+}
+
+
+
+  
+code {
+  font-family: Raleway,
+  Nunito, source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+}
+
+h2, h3, h4, h5 {
+  color: $headerColor;
+  font-weight: bold;
+}
+
+.form-input {
+  width: 100%;
+  height: 45px;
+  padding: 10px;
+  border: 1px rgba(198, 202, 205, 0.8) solid;
+  border-radius: 8px;
+  color: $inputTextColor;
+  font-weight: bold;
+  transition: all .3s ease-out;
+}
+
+.input-error {
+  border: 1px solid red;
+  color: red;
+  outline: red;
+}
+
+.red-info {
+  color: red;
+  font-size: 12px;
+}
+
+.btn {
+  background: $btnBgColor;
+  color: $btnTextColor;
+  padding: 12px 18px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all .3s ease-out;
+}
+
+.btn:hover {
+  background-color: $btnBgHoverColor;
+  // border: 1px solid $btnBgColor;
+  color: #fff;
+}
+
+.btn:active {
+  font-size: 10px;
+}
+
+.btn-medium {
+  width: 60%;
+}
+
+.btn-large {
+  width: 100%;
+}
+
+button:disabled,
+button[disabled]{
+  pointer-events: none;
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+.login-link-div {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.link {
+  color: $textColor;
+}
+
+.icon {
+  cursor: pointer;
+  transition: all .4s ease-in-out;
+  font-size: 20px;
+}
+
+.icon:hover {
+  color: red;
+  
+}
+
+.info {
+  color: $textColor;
+  font-size: 12px;
+}
+
+.show-text {
+  opacity: 1;
+  // color: $textColor;
+}
+
+.container {
+  border: 1px solid lightslategray;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  #check-icon {
+    animation: App-logo-spin infinite 1s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    // transform: rotate(0deg);
+    opacity: 0.6;
+    color: #7737e7;
+  }
+  to {
+    // transform: rotate(360deg);
+    opacity: 1;
+  }
+}
+
+.link {
+  text-decoration: none;
+  text-align: center;
+  color: $btnTextColor
+}
