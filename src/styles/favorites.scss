@@ -1,0 +1,94 @@
+@use '../index.scss' as app;
+
+.favorites-section {
+    padding: 50px;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.products-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.products-info p {
+    color: app.$message-color;
+}
+
+.favorites-div {
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+
+.product-container {
+    position: relative;
+    margin: auto;
+    cursor: pointer;
+    min-width: 10vw;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid app.$border-color;
+}
+
+.product-container img {
+    width: 100%;
+}
+
+.product-price {
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-top: 4px;
+}
+
+.add-tocart-btn {
+    margin: auto;
+    margin-bottom: 20px;
+    border: 2px solid app.$head-color;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    padding: 4px;
+    width: 50%;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.delete-btn {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    background-color: app.$danger-delete-color;;
+    color: white;
+    outline: none;
+    border: none;
+    padding: 4px 16px;
+    transition: all .3s ease-in-out;
+    z-index: 3;
+    font-weight: bold;
+    
+
+}
+
+.delete-btn:hover {
+    color: app.$danger-delete-color;
+    background-color: app.$btn-hover-color;
+}
+
+.delete-btn:active {
+    font-size: 10px;
+}
+
+#dropdown-link {
+    border: 1px solid app.$border-color;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: app.$head-color;
+}

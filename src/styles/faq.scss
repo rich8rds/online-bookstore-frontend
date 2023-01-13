@@ -1,0 +1,75 @@
+
+@use '../index.scss' as app;
+
+
+.faq-section {
+    font-family: app.$font-raleway;
+    margin: auto;
+    /* min-height: 100vh; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 40px;
+    width: 70vw;
+    padding: 40px;
+}
+
+
+.faq-div {
+    margin-top: 7%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.collapse-div {
+    display: flex;
+    gap: 60px;
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.heading h3 {
+    font-size: 30px;
+    color: app.$head-color;
+}
+
+.heading hr {
+    border: 1px solid app.$border-color;
+    min-width: 15vw;
+}
+
+[data-theme='compact'] .site-collapse-custom-collapse 
+.site-collapse-custom-panel,
+.site-collapse-custom-collapse 
+.site-collapse-custom-panel {
+  margin-bottom: 24px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 0px !important;
+  border-radius: 2px;
+  text-align: left;
+  width: 450px;
+  font-family: app.$font-raleway;
+  font-size: 15px;
+}
+
+
+.ant-collapse-header{
+  border: 1px solid app.$border-color;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  font-weight: bold;
+  color: app.$header-color !important;
+}
+
+.ant-collapse-content{
+    color: app.$header-content-color !important;
+}

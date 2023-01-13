@@ -1,0 +1,58 @@
+
+@use '../index.scss' as app;
+
+
+.section-404 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: app.$font-raleway;
+    gap: 10px;
+}
+
+.container {
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#head {
+    font-size: 10vw;
+}
+
+#sub-heading {
+    color: app.$sub-head-color;
+    font-size: 36px;
+}
+
+#message {
+    color: app.$message-color;
+    font-size: 16px;
+    /* max-width: 85vw; */
+}
+
+.home-btn {
+    font-family: app.$font-raleway;
+    width: 220px;
+    margin: auto;
+    outline: none;
+    background: app.$head-color;
+    color: white;
+    padding: 15px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: all .3s ease-in;
+}
+
+.home-btn:hover {
+    background-color: #fff;
+    color: app.$head-color;
+    border: 1px solid app.$head-color;
+}
+
+.home-btn:active {
+    font-size: 10px;
+}

@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import ChangePassword from './components/auth/ChangePassword';
+import Favorites from './components/page/Favorites'
 import Login from './components/auth/Login';
 import ResetPassword from './components/auth/ResetPassword';
 import Signup from './components/auth/Signup';
@@ -9,15 +10,17 @@ import Home from './components/page/Home';
 import SharedLayout from './components/page/SharedLayout';
 import UsersPage from './components/page/UsersPage';
 import RequireAuth from './endpoints/RequireAuth';
+import FAQ from './components/FAQ';
 
 
-
-function App() {
+const App = () => {
   return (
     <main className="main">
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<Home />} />
+          <Route path="faq" element={<FAQ />} />
+
           <Route path="auth/">
             <Route path="signin" element={<Login />} />
             <Route path="verify-registration" element={<VerifySignup />} />
@@ -29,6 +32,7 @@ function App() {
           <Route element={ <RequireAuth /> } >
             <Route path="user/">
               <Route path="random" element={ <UsersPage /> }/>   
+              <Route path="favorites" element={ <Favorites /> }/>   
             </Route>
             <Route path="admin/">
               <Route path="random" element={ <AdminDashboard /> }/>   
